@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{%block body_block%}
+<div class="container d-flex justify-content-center mt-5">
+    <div class="card bg-primary-subtle text-emphasis-primary" style="width: 18rem;">
+        {%if data.picture%}
+        <img src="{{data.picture.url}}" alt="">
+        {%endif%}
+        <div class="card-header text-center">
+            {{data.name}}
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item bg-info-subtle text-emphasis-info">Price: <strong>{{data.price}}</strong></li>
+          <li class="list-group-item bg-info-subtle text-emphasis-info">Brand: <strong>{{data.brand}}</strong></li>
+          <li class="list-group-item bg-info-subtle text-emphasis-info">Specs:<strong>{{data.specs}}</strong></li>
+          <li class="list-group-item bg-info-subtle text-emphasis-info">Display:<strong>{{data.display}}</strong></li>
+          <li class="list-group-item bg-info-subtle text-emphasis-info"> <a href="https://www.flipkart.com/search?q={{data.name}}">BUYY NOW</a></li>
+        </ul>
+    </div>
+</div>
+{%endblock%}

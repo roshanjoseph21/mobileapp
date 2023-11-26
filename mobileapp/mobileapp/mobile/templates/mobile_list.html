@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+{%block body_block%}
+<div class="container">
+    <table class="table table-warning table-bordered border-dark table-striped">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Brand</th>
+            <th>Specs</th>
+            <th>Display</th>
+            <th>Options</th>
+        </tr>
+    {%for mob in data%}
+    <tr>
+        <td>{{mob.name}}</td>
+        <td>{{mob.price}}</td>
+        <td>{{mob.brand}}</td>
+        <td>{{mob.specs}}</td>
+        <td>{{mob.display}}</td>
+        <td><a href="{% url 'mobile-view' mob.id %}">View</a> <br> 
+            <a href="{% url 'mobile-delete' mob.id %}">Delete</a> <br> 
+            <a href="{%url 'mobile-update' mob.id%}">Update</a> <br>
+            <a href="https://www.flipkart.com/search?q={{mob.name}}">Buy Now</a>
+        </td>
+    </tr>
+    {%endfor%}
+    </table>
+</div>
+{%endblock%}

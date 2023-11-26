@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+
+{%block body_block%}
+<div class="container d-flex justify-content-center">
+    <form action="" method="post" enctype="multipart/form-data" class="w-50 border-info shadow p-5 mt-5">
+        <h3>UPDATE MOBILE</h3>
+            {%csrf_token%}
+            {{form.as_p}}
+            <button type="submit" class="update">Update</button>
+        </form>
+</div>
+
+{%endblock%}
+   
